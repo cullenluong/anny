@@ -6,3 +6,8 @@
 	"sigmoid activation function"
 	[x]
 	(/ 1 (+ 1 (Math/exp (- x)))))
+
+(defn tanh
+	"tanh activation function"
+	[x]
+	(Math/tanh x))
