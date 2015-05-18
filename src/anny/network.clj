@@ -7,7 +7,6 @@
 
 (defrecord Network [weights activation-function bias?])
 
-
 (defmulti network 
 	"constructer function for the Network type will take a generator parameter
 	TODO: add custom connections so this type can consturct several types of networks
@@ -47,7 +46,7 @@
 					 	  bias? true}}]
 	(let [f #(- (rand 2) 1)
 		  weights (generate-weights f size)]
-	(Network. weights activation-function bias?)))
+	(Network. (m/matrix weights) activation-function bias?)))
 
 
 (defmethod network :pre-made
